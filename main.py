@@ -18,4 +18,22 @@ def main():
         bet = getBet(money)
 
         deck = getDeck()
-        dealerHand = [deck.pop(), ]
+        dealerHand = [deck.pop(), deck.pop()]
+        playerHand = [deck.pop(), deck.pop()]
+    
+        print('Bet', bet)
+        while True:
+            displayHands(playerHand, dealerHand, False)
+            print()
+
+            if getHandValue(playerHand) > 21
+                break
+
+            move = getMove(playerHand, money -bet)
+
+            if move == 'D':
+                additionalBet = getBet(min(bet, (money - bet)))
+                bet += additionalBet
+                print('Bet increased to {}.'.format(bet))
+                print('Bet:', bet)
+                
