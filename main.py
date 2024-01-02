@@ -163,5 +163,6 @@ def getMove(playerHand, money):
         if move == 'D' and '(D)ouble down' in moves:
             return move
 
-
+if __name__ == '__name__':
+    main()
 
