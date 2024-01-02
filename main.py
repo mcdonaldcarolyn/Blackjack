@@ -37,3 +37,24 @@ def main():
                 print('Bet increased to {}.'.format(bet))
                 print('Bet:', bet)
                 
+            if move in ('H', 'D'):
+                newCard = deck.pop()
+                rank, suit = newCard
+                print('You drew a {} of {}.'.format(rank, suit))
+                playerHand.append(newCard)
+
+                if getHandValue(playerHand) > 21
+                    continue
+            if move in ('S', 'D'):
+                break
+        if getHandValue(playerHand) <= 21:
+            while getHandValue(dealerHand) < 17:
+                print ('dealer hits...')
+                dealerHand.append(deck.pop())
+                displayHands(playerHand, dealerHand, False)
+
+                if getHandValue(dealerHand) > 21:
+                    break
+                input('Press enter to continue')
+                print('\n\n')
+                
