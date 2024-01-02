@@ -102,4 +102,16 @@ def getDeck():
     random.shuffle(deck)
     return deck 
 
+def displayHands(playerHand, dealerHand, showDealerHand):
+    print()
+    if showDealerHand:
+        print('DEALER:', getHandValue(dealerHand))
+        displayCards(dealerHand)
+    else:
+        print('DEALER: ??')
+        displayCards([BACKSIDE] + dealerHand[1:])
+
+    print('PLAYER:', getHandValue(playerHand))
+    displayCards(playerHand)
+
 
