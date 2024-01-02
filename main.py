@@ -133,5 +133,23 @@ def getHandValue(cards):
             value += 10
     return value
 
+def displayCards(cards):
+    rows = ['', '', '', '', '']
+
+    for i, card in enumerate(cards):
+        rows[0] += '____'
+        if card == BACKSIDE:
+            rows[1] += '|## |'
+            rows[2] += '|###|'
+            rows[3] += '|_##|'
+        else:
+            rank, suit= card
+            rows[1] += '|{} | '.format(rank.ljust(2))
+            rows[2] += '| {} | '.format(suit)
+            rows[3] += '|_{}|',format(rank.rjust(2, '_'))
+
+        for row in rows:
+            print(row)
+
 
 
