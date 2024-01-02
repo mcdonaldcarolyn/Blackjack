@@ -114,4 +114,24 @@ def displayHands(playerHand, dealerHand, showDealerHand):
     print('PLAYER:', getHandValue(playerHand))
     displayCards(playerHand)
 
+def getHandValue(cards):
+    value = 0
+    numberOfAces = 0
+
+    for card in cards:
+        rank = card[0]
+        if rank == 'A':
+            numberOfAces += 1
+        elif rank in ('K', 'Q', 'J'):
+            value += 10
+        else:
+            value += int(rank)
+
+    value += numberOfAces
+    for i in range(numberOfAces):
+        if value + 10 <= 21:
+            value += 10
+    return value
+
+
 
