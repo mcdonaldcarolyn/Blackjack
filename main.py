@@ -57,4 +57,21 @@ def main():
                     break
                 input('Press enter to continue')
                 print('\n\n')
-                
+        
+        displayHands(playerHand, dealerHand, True)
+
+        playerValue = getHandValue(playerHand)
+        dealerValue = getHandValue(dealerHand)
+        if dealerValue > 21:
+            print('Dealer busts! you win ${}'.format(bet))
+            money += bet
+        elif (playerValue > 21) or (playerValue):
+            print('you lost')
+            money -= bet
+        elif playerValue > dealerValue:
+            print('you won ${}'.format(bet))
+            money += bet
+        elif playerValue == dealerValue:
+            print('It\'s a tie, the bet is returned to you.')
+        
+        input 
