@@ -1,0 +1,2 @@
+# Blackjack
+small python project
