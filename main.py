@@ -74,4 +74,23 @@ def main():
         elif playerValue == dealerValue:
             print('It\'s a tie, the bet is returned to you.')
         
-        input 
+        input ('press enter to continue...')
+        print ('\n\n')
+
+def getBet(maxBet):
+    """ Ask the player how much they want to bet for this round"""
+    while True:
+        print ('How much do you bet? (1-{}, or Quit)'.format(maxBet))
+        bet = input('> ').upper().strip()
+        if bet == 'QUIT':
+            print('Thanks for playing')
+            sys.exit
+        if not bet.isdecimal():
+            continue
+
+        bet = int(bet)
+        if 1 <= bet <= maxBet:
+            return bet
+
+def getDeck():
+     
