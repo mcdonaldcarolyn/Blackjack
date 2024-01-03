@@ -26,10 +26,10 @@ def main():
             displayHands(playerHand, dealerHand, False)
             print()
 
-            if getHandValue(playerHand) > 21
+            if getHandValue(playerHand) > 21:
                 break
 
-            move = getMove(playerHand, money -bet)
+            move = getMove(playerHand, money - bet)
 
             if move == 'D':
                 additionalBet = getBet(min(bet, (money - bet)))
@@ -43,7 +43,7 @@ def main():
                 print('You drew a {} of {}.'.format(rank, suit))
                 playerHand.append(newCard)
 
-                if getHandValue(playerHand) > 21
+                if getHandValue(playerHand) > 21:
                     continue
             if move in ('S', 'D'):
                 break
@@ -104,6 +104,7 @@ def getDeck():
 
 def displayHands(playerHand, dealerHand, showDealerHand):
     print()
+    print(showDealerHand)
     if showDealerHand:
         print('DEALER:', getHandValue(dealerHand))
         displayCards(dealerHand)
@@ -143,12 +144,12 @@ def displayCards(cards):
             rows[2] += '|###|'
             rows[3] += '|_##|'
         else:
-            rank, suit= card
+            rank, suit = card
             rows[1] += '|{} | '.format(rank.ljust(2))
             rows[2] += '| {} | '.format(suit)
-            rows[3] += '|_{}|',format(rank.rjust(2, '_'))
+            rows[3] += '|_{}|'.format(rank.rjust(2, '_'))
 
-        for row in rows:
+    for row in rows:
             print(row)
 
 def getMove(playerHand, money):
@@ -163,6 +164,6 @@ def getMove(playerHand, money):
         if move == 'D' and '(D)ouble down' in moves:
             return move
 
-if __name__ == '__name__':
+if __name__ == '__main__':
     main()
 
