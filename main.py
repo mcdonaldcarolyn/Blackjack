@@ -65,7 +65,7 @@ def main():
         if dealerValue > 21:
             print('Dealer busts! you win ${}'.format(bet))
             money += bet
-        elif (playerValue > 21) or (playerValue):
+        elif (playerValue > 21) or (playerValue < dealerValue):
             print('you lost')
             money -= bet
         elif playerValue > dealerValue:
