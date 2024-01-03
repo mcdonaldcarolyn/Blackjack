@@ -12,7 +12,7 @@ def main():
     money = 5000
     while True:
         if money <= 0:
-            print("You are broke")
+            print("You are broke, sorry")
             print("Thanks for playing")
         print('Money:', money)
         bet = getBet(money)
